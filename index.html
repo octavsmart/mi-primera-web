@@ -3,34 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Web con Cloudflare</title>
+    <title>TRAMITES CAJA NACIONAL SALUD CNS - Servicios en Santa Cruz</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        body { 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* --- Estilos Generales --- */
+        :root {
+            --color-primario: #0056b3; /* Un azul profesional, puedes cambiarlo */
+            --color-secundario: #25D366; /* Verde de WhatsApp */
+            --color-texto: #333;
+            --color-fondo: #f8f9fa;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            text-align: center;
-            padding: 40px;
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-texto);
             background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #ff7600; /* Un toque de color de Cloudflare */
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Secciones --- */
+        .seccion {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .seccion h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--color-primario);
+        }
+
+        .seccion p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+        
+        /* --- Encabezado (Hero) --- */
+        #hero {
+            background-color: var(--color-fondo);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        #hero .subtitulo {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* --- Botones de Llamada a la Acción (CTA) --- */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-button {
+            background-color: var(--color-secundario);
+            color: white;
+        }
+        
+        .whatsapp-button i {
+            margin-right: 10px;
+        }
+        
+        /* --- Sección de Beneficios --- */
+        #beneficios .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .beneficio-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .beneficio-card i {
+            font-size: 3rem;
+            color: var(--color-primario);
+            margin-bottom: 20px;
+        }
+        
+        .beneficio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Sección de Llamada a la Acción Final --- */
+        #cta-final {
+            background-color: var(--color-primario);
+            color: white;
+        }
+        
+        #cta-final h2 {
+            color: white;
+        }
+
+        /* --- Pie de Página (Footer) --- */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* --- Botón Flotante de WhatsApp --- */
+        .whatsapp-flotante {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--color-secundario);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-flotante:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Estilos para Móviles --- */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.2rem;
+            }
+            .seccion h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>¡Hola Mundo!</h1>
-        <p>Mi página estática está funcionando en <strong>Cloudflare Pages</strong>.</p>
-    </div>
+
+    <header id="hero" class="seccion">
+        <div class="container">
+            <h1>TRAMITES CAJA NACIONAL SALUD CNS  en Santa Cruz de la Sierra</h1>
+            <p class="subtitulo">
+                AFILIACIÓN EMPRESAS PRIVADAS Y JURÍDICAS con atención personalizada y resultados garantizados. ¡Contáctanos sin compromiso!
+            </p>
+            <a href="https://wa.me/59133316465?text=Hola, me interesa su servicio. Quisiera más información." target="_blank" class="cta-button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="beneficios" class="seccion">
+            <div class="container">
+                <h2>¿Por Qué Elegirnos?</h2>
+                <p>Ofrecemos una experiencia única en Santa Cruz, enfocada en tu satisfacción.</p>
+                <div class="beneficios-grid">
+                    <div class="beneficio-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Rapidez y Eficiencia</h3>
+                        <p>Atendemos tu solicitud de inmediato y cumplimos en los plazos acordados.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Atención Personalizada</h3>
+                        <p>Hablamos directamente contigo para entender tus necesidades exactas.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                        <h3>Precios Justos</h3>
+                        <p>Te damos la mejor relación calidad-precio del mercado local.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-final" class="seccion">
+            <div class="container">
+                <h2>¿Listo para empezar?</h2>
+                <p>
+                    No esperes más para obtener la solución que buscas. Haz clic en el botón y hablemos directamente por WhatsApp. ¡La consulta es gratis!
+                </p>
+                <a href="https://wa.me/59133316465?text=Hola, estoy listo para empezar. Me gustaría conversar sobre sus servicios." target="_blank" class="cta-button whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Pedir Cotización Gratis
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TRAMITES CAJA NACIONAL SALUD CNS - Todos los derechos reservados.</p>
+            <p>Santa Cruz de la Sierra, Bolivia</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/59133316465?text=Hola, vengo desde su página web y necesito ayuda." target="_blank" class="whatsapp-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
