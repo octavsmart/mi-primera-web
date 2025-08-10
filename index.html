@@ -7,19 +7,29 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fallback para iconos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
     <style>
-        /* --- Estilos Generales --- */
+        /* --- Variables CSS --- */
         :root {
-            --color-primario: #0056b3; /* Un azul profesional, puedes cambiarlo */
-            --color-secundario: #25D366; /* Verde de WhatsApp */
-            --color-texto: #333;
-            --color-fondo: #f8f9fa;
+            --color-primario: #0066ff;
+            --color-primario-oscuro: #0052cc;
+            --color-secundario: #25D366;
+            --color-acento: #ff6b35;
+            --color-texto: #2c3e50;
+            --color-texto-claro: #7f8c8d;
+            --color-fondo: #ffffff;
+            --gradiente-principal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradiente-secundario: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --sombra-suave: 0 10px 30px rgba(0,0,0,0.1);
+            --sombra-fuerte: 0 20px 60px rgba(0,0,0,0.15);
         }
 
+        /* --- Reset y Base --- */
         * {
             margin: 0;
             padding: 0;
@@ -33,158 +43,467 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--color-texto);
-            background-color: white;
+            background-color: var(--color-fondo);
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- Secciones --- */
-        .seccion {
-            padding: 80px 0;
-            text-align: center;
+        /* --- Animaciones --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .seccion h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--color-primario);
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
 
-        .seccion p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
-        /* --- Encabezado (Hero) --- */
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* --- Hero Section --- */
         #hero {
-            background-color: var(--color-fondo);
-            min-height: 80vh;
+            background: var(--gradiente-principal);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        #hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        #hero .subtitulo {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #555;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* --- Botones de Llamada a la Acción (CTA) --- */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #ffffff, #e8f4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        #hero .subtitulo {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* --- Botones CTA Mejorados --- */
         .cta-button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--sombra-fuerte);
         }
 
         .whatsapp-button {
-            background-color: var(--color-secundario);
+            background: linear-gradient(135deg, var(--color-secundario), #20b858);
             color: white;
-        }
-        
-        .whatsapp-button i {
-            margin-right: 10px;
-        }
-        
-        /* --- Sección de Beneficios --- */
-        #beneficios .beneficios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .beneficio-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        
-        .beneficio-card i {
-            font-size: 3rem;
-            color: var(--color-primario);
-            margin-bottom: 20px;
-        }
-        
-        .beneficio-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            margin: 0 10px;
         }
 
-        /* --- Sección de Llamada a la Acción Final --- */
-        #cta-final {
-            background-color: var(--color-primario);
-            color: white;
+        .whatsapp-button:hover {
+            background: linear-gradient(135deg, #20b858, var(--color-secundario));
+        }
+
+        .whatsapp-button i {
+            margin-right: 12px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Fallback para iconos de WhatsApp si no cargan */
+        .whatsapp-button::before {
+            content: "📱";
+            margin-right: 8px;
+            font-size: 1.2em;
         }
         
+        .whatsapp-button i::before {
+            content: "💬";
+        }
+        
+        /* Ocultar el fallback si el icono carga correctamente */
+        .whatsapp-button i.fab.fa-whatsapp ~ ::before {
+            display: none;
+        }
+
+        /* --- Secciones Mejoradas --- */
+        .seccion {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .seccion h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            background: var(--gradiente-principal);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .seccion h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--color-acento);
+            border-radius: 2px;
+        }
+
+        .seccion p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: var(--color-texto-claro);
+        }
+
+        /* --- Grid de Beneficios Mejorado --- */
+        #beneficios {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .beneficio-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .beneficio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradiente-secundario);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .beneficio-card:hover::before {
+            left: 0;
+            opacity: 0.1;
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--sombra-fuerte);
+        }
+
+        .beneficio-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .beneficio-card i {
+            font-size: 4rem;
+            background: var(--gradiente-principal);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .beneficio-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .beneficio-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--color-texto);
+            font-weight: 600;
+        }
+
+        .beneficio-card p {
+            font-size: 1rem;
+            color: var(--color-texto-claro);
+            line-height: 1.6;
+        }
+
+        /* --- Sección CTA Final Mejorada --- */
+        #cta-final {
+            background: var(--gradiente-secundario);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta-final::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,30 100,100 0,70" fill="rgba(255,255,255,0.05)"/></svg>');
+        }
+
+        #cta-final .container {
+            position: relative;
+            z-index: 2;
+        }
+
         #cta-final h2 {
             color: white;
+            background: none;
+            -webkit-text-fill-color: white;
         }
 
-        /* --- Pie de Página (Footer) --- */
+        #cta-final h2::after {
+            background: rgba(255,255,255,0.5);
+        }
+
+        #cta-final p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3rem;
+        }
+
+        /* --- Footer Mejorado --- */
         footer {
-            background-color: #333;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
+            position: relative;
         }
 
-        /* --- Botón Flotante de WhatsApp --- */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* --- Botón Flotante Mejorado --- */
         .whatsapp-flotante {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--color-secundario);
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--color-secundario), #20b858);
             color: #FFF;
-            border-radius: 50px;
+            border-radius: 50%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 3s infinite;
+        }
+
+        .whatsapp-flotante::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--color-secundario), #20b858, var(--color-secundario));
+            border-radius: 50%;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
         }
 
         .whatsapp-flotante:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
-        /* --- Estilos para Móviles --- */
+        .whatsapp-flotante:hover::before {
+            opacity: 1;
+        }
+
+        /* --- Efectos de Scroll --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
             #hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .seccion h2 {
                 font-size: 2.2rem;
             }
-            .seccion h2 {
+            
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .beneficio-card {
+                padding: 30px 20px;
+            }
+            
+            .cta-button {
+                padding: 15px 25px;
+                font-size: 1rem;
+                margin: 5px;
+            }
+            
+            .whatsapp-flotante {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 {
                 font-size: 2rem;
+            }
+            
+            #hero .subtitulo {
+                font-size: 1.1rem;
+            }
+            
+            .seccion {
+                padding: 60px 0;
             }
         }
     </style>
@@ -193,49 +512,54 @@
 
     <header id="hero" class="seccion">
         <div class="container">
-            <h1>TRAMITES CAJA NACIONAL SALUD CNS  en Santa Cruz de la Sierra</h1>
-            <p class="subtitulo">
-                AFILIACIÓN EMPRESAS PRIVADAS Y JURÍDICAS con atención personalizada y resultados garantizados. ¡Contáctanos sin compromiso!
-            </p>
-            <a href="https://wa.me/59133316465?text=Hola, me interesa su servicio. Quisiera más información." target="_blank" class="cta-button whatsapp-button">
-                <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
-            </a>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i> Servicio Confiable y Profesional
+                </div>
+                <h1>TRAMITES CAJA NACIONAL SALUD CNS en Santa Cruz de la Sierra</h1>
+                <p class="subtitulo">
+                    AFILIACIÓN EMPRESAS PRIVADAS Y JURÍDICAS con atención personalizada y resultados garantizados. ¡Contáctanos sin compromiso y obtén la mejor asesoría profesional!
+                </p>
+                <a href="https://wa.me/59133316465?text=Hola, me interesa su servicio. Quisiera más información." target="_blank" class="cta-button whatsapp-button">
+                    <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i> Hablar por WhatsApp
+                </a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="beneficios" class="seccion">
+        <section id="beneficios" class="seccion fade-in">
             <div class="container">
                 <h2>¿Por Qué Elegirnos?</h2>
-                <p>Ofrecemos una experiencia única en Santa Cruz, enfocada en tu satisfacción.</p>
+                <p>Ofrecemos una experiencia única en Santa Cruz, enfocada en tu satisfacción y en resultados excepcionales que superan tus expectativas.</p>
                 <div class="beneficios-grid">
                     <div class="beneficio-card">
                         <i class="fas fa-rocket"></i>
                         <h3>Rapidez y Eficiencia</h3>
-                        <p>Atendemos tu solicitud de inmediato y cumplimos en los plazos acordados.</p>
+                        <p>Atendemos tu solicitud de inmediato y cumplimos en los plazos acordados. Tu tiempo es valioso y lo respetamos.</p>
                     </div>
                     <div class="beneficio-card">
                         <i class="fas fa-headset"></i>
                         <h3>Atención Personalizada</h3>
-                        <p>Hablamos directamente contigo para entender tus necesidades exactas.</p>
+                        <p>Hablamos directamente contigo para entender tus necesidades exactas. Cada cliente es único y merece un servicio especializado.</p>
                     </div>
                     <div class="beneficio-card">
                         <i class="fas fa-hand-holding-dollar"></i>
                         <h3>Precios Justos</h3>
-                        <p>Te damos la mejor relación calidad-precio del mercado local.</p>
+                        <p>Te damos la mejor relación calidad-precio del mercado local. Transparencia total, sin costos ocultos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="cta-final" class="seccion">
+        <section id="cta-final" class="seccion fade-in">
             <div class="container">
                 <h2>¿Listo para empezar?</h2>
                 <p>
-                    No esperes más para obtener la solución que buscas. Haz clic en el botón y hablemos directamente por WhatsApp. ¡La consulta es gratis!
+                    No esperes más para obtener la solución que buscas. Haz clic en el botón y hablemos directamente por WhatsApp. ¡La consulta es completamente gratis y sin compromiso!
                 </p>
                 <a href="https://wa.me/59133316465?text=Hola, estoy listo para empezar. Me gustaría conversar sobre sus servicios." target="_blank" class="cta-button whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> Pedir Cotización Gratis
+                    <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i> Pedir Cotización Gratis
                 </a>
             </div>
         </section>
@@ -249,8 +573,50 @@
     </footer>
     
     <a href="https://wa.me/59133316465?text=Hola, vengo desde su página web y necesito ayuda." target="_blank" class="whatsapp-flotante">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i>
     </a>
+
+    <script>
+        // Efectos de scroll
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+
+        // Smooth scroll para elementos internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efecto parallax suave para el hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.getElementById('hero');
+            const speed = scrolled * 0.5;
+            hero.style.transform = `translateY(${speed}px)`;
+        });
+    </script>
 
 </body>
 </html>
