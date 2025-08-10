@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-BO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAMITES CAJA NACIONAL SALUD CNS - Servicios en Santa Cruz</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Asesoría y Trámites de Afiliación a la CNS en Santa Cruz | Gestoría Profesional</title>
+    <meta name="description" content="Ofrecemos servicios de gestoría y asesoría profesional para trámites de afiliación a la Caja Nacional de Salud (CNS) para empresas en Santa Cruz de la Sierra. Rapidez, eficiencia y precios justos. ¡Contáctanos!">
+    <meta name="keywords" content="tramites cns santa cruz, afiliacion cns bolivia, caja nacional de salud santa cruz, gestoria cns, asesoria cns empresas, afiliar empresa cns, tramites en linea cns">
+    <meta name="author" content="TRAMITES CAJA NACIONAL SALUD CNS">
+    <link rel="canonical" href="https://tusitioweb.com/index.html"> <meta property="og:title" content="Asesoría y Trámites de Afiliación a la CNS en Santa Cruz">
+    <meta property="og:description" content="Servicio de gestoría profesional para afiliación de empresas a la CNS en Santa Cruz. ¡Optimiza tu tiempo y asegura tus trámites con nosotros!">
+    <meta property="og:image" content="https://tusitioweb.com/og-image.jpg"> <meta property="og:url" content="https://tusitioweb.com/"> <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_BO">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asesoría y Trámites de Afiliación a la CNS en Santa Cruz">
+    <meta name="twitter:description" content="Servicio de gestoría profesional para afiliación de empresas a la CNS en Santa Cruz. ¡Optimiza tu tiempo y asegura tus trámites con nosotros!">
+    <meta name="twitter:image" content="https://tusitioweb.com/twitter-image.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Fallback para iconos -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "TRAMITES CAJA NACIONAL SALUD CNS - Servicios en Santa Cruz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Cruz de la Sierra",
+        "addressCountry": "BO"
+      },
+      "description": "Servicio de gestoría y asesoría profesional para trámites de afiliación a la Caja Nacional de Salud (CNS) para empresas privadas y jurídicas en Santa Cruz de la Sierra.",
+      "telephone": "+59133316465",
+      "url": "https://tusitioweb.com/",
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+    
     <style>
         /* --- Variables CSS --- */
         :root {
@@ -52,45 +78,16 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        .text-center {
+            text-align: center;
+        }
 
         /* --- Animaciones --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
         /* --- Hero Section --- */
         #hero {
@@ -182,10 +179,7 @@
             transition: left 0.5s;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
+        .cta-button:hover::before { left: 100%; }
         .cta-button:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: var(--sombra-fuerte);
@@ -197,29 +191,10 @@
             margin: 0 10px;
         }
 
-        .whatsapp-button:hover {
-            background: linear-gradient(135deg, #20b858, var(--color-secundario));
-        }
-
+        .whatsapp-button:hover { background: linear-gradient(135deg, #20b858, var(--color-secundario)); }
         .whatsapp-button i {
             margin-right: 12px;
             animation: pulse 2s infinite;
-        }
-
-        /* Fallback para iconos de WhatsApp si no cargan */
-        .whatsapp-button::before {
-            content: "📱";
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-        
-        .whatsapp-button i::before {
-            content: "💬";
-        }
-        
-        /* Ocultar el fallback si el icono carga correctamente */
-        .whatsapp-button i.fab.fa-whatsapp ~ ::before {
-            display: none;
         }
 
         /* --- Secciones Mejoradas --- */
@@ -237,6 +212,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
+            text-align: center;
         }
 
         .seccion h2::after {
@@ -251,23 +227,23 @@
             border-radius: 2px;
         }
 
-        .seccion p {
+        .seccion > .container > p {
             font-size: 1.2rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 50px auto;
             color: var(--color-texto-claro);
+            text-align: center;
         }
 
-        /* --- Grid de Beneficios Mejorado --- */
+        /* --- Grid de Beneficios / Servicios --- */
         #beneficios {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            text-align: center;
         }
 
         .beneficios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
             margin-top: 80px;
         }
@@ -297,20 +273,13 @@
             z-index: 1;
         }
 
-        .beneficio-card:hover::before {
-            left: 0;
-            opacity: 0.1;
-        }
-
+        .beneficio-card:hover::before { left: 0; opacity: 0.1; }
         .beneficio-card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: var(--sombra-fuerte);
         }
 
-        .beneficio-card > * {
-            position: relative;
-            z-index: 2;
-        }
+        .beneficio-card > * { position: relative; z-index: 2; }
 
         .beneficio-card i {
             font-size: 4rem;
@@ -323,9 +292,7 @@
             transition: transform 0.3s ease;
         }
 
-        .beneficio-card:hover i {
-            transform: scale(1.1) rotate(5deg);
-        }
+        .beneficio-card:hover i { transform: scale(1.1) rotate(5deg); }
 
         .beneficio-card h3 {
             font-size: 1.6rem;
@@ -339,6 +306,48 @@
             color: var(--color-texto-claro);
             line-height: 1.6;
         }
+        
+        /* --- ESTILOS PARA LA NUEVA SECCION FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0 auto;
+        }
+        .faq-item {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+        }
+        .faq-item summary::after {
+            content: '\f078'; /* Icono de flecha de FontAwesome */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .faq-item p {
+            padding: 0 20px 20px 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-texto-claro);
+            text-align: left;
+        }
+
 
         /* --- Sección CTA Final Mejorada --- */
         #cta-final {
@@ -346,6 +355,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         #cta-final::before {
@@ -358,10 +368,7 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,30 100,100 0,70" fill="rgba(255,255,255,0.05)"/></svg>');
         }
 
-        #cta-final .container {
-            position: relative;
-            z-index: 2;
-        }
+        #cta-final .container { position: relative; z-index: 2; }
 
         #cta-final h2 {
             color: white;
@@ -369,13 +376,14 @@
             -webkit-text-fill-color: white;
         }
 
-        #cta-final h2::after {
-            background: rgba(255,255,255,0.5);
-        }
+        #cta-final h2::after { background: rgba(255,255,255,0.5); }
 
         #cta-final p {
             color: rgba(255,255,255,0.9);
             font-size: 1.3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- Footer Mejorado --- */
@@ -443,9 +451,7 @@
             box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
-        .whatsapp-flotante:hover::before {
-            opacity: 1;
-        }
+        .whatsapp-flotante:hover::before { opacity: 1; }
 
         /* --- Efectos de Scroll --- */
         .fade-in {
@@ -461,50 +467,18 @@
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .seccion h2 {
-                font-size: 2.2rem;
-            }
-            
-            .beneficios-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .beneficio-card {
-                padding: 30px 20px;
-            }
-            
-            .cta-button {
-                padding: 15px 25px;
-                font-size: 1rem;
-                margin: 5px;
-            }
-            
-            .whatsapp-flotante {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-                bottom: 20px;
-                right: 20px;
-            }
+            #hero h1 { font-size: 2.5rem; }
+            .seccion h2 { font-size: 2.2rem; }
+            .beneficios-grid { grid-template-columns: 1fr; gap: 30px; }
+            .beneficio-card { padding: 30px 20px; }
+            .cta-button { padding: 15px 25px; font-size: 1rem; margin: 5px; }
+            .whatsapp-flotante { width: 60px; height: 60px; font-size: 28px; bottom: 20px; right: 20px; }
         }
 
         @media (max-width: 480px) {
-            #hero h1 {
-                font-size: 2rem;
-            }
-            
-            #hero .subtitulo {
-                font-size: 1.1rem;
-            }
-            
-            .seccion {
-                padding: 60px 0;
-            }
+            #hero h1 { font-size: 2rem; }
+            #hero .subtitulo { font-size: 1.1rem; }
+            .seccion { padding: 80px 0; }
         }
     </style>
 </head>
@@ -514,37 +488,61 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-shield-alt"></i> Servicio Confiable y Profesional
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i> Servicio Confiable y Profesional
                 </div>
-                <h1>TRAMITES CAJA NACIONAL SALUD CNS en Santa Cruz de la Sierra</h1>
+                <h1>Trámites y Afiliación a la CNS en Santa Cruz</h1>
                 <p class="subtitulo">
-                    AFILIACIÓN EMPRESAS PRIVADAS Y JURÍDICAS con atención personalizada y resultados garantizados. ¡Contáctanos sin compromiso y obtén la mejor asesoría profesional!
+                    Ofrecemos asesoría experta y gestión completa para la <strong>afiliación de empresas privadas y jurídicas</strong>. Simplifica tus trámites, ahorra tiempo y garantiza el cumplimiento normativo. ¡Contáctanos sin compromiso!
                 </p>
-                <a href="https://wa.me/59133316465?text=Hola, me interesa su servicio. Quisiera más información." target="_blank" class="cta-button whatsapp-button">
-                    <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i> Hablar por WhatsApp
+                <a href="https://wa.me/59133316465?text=Hola, me interesa su servicio de gestoría para la CNS. Quisiera más información." target="_blank" class="cta-button whatsapp-button">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Hablar por WhatsApp
                 </a>
             </div>
         </div>
     </header>
 
     <main>
+        <section id="servicios" class="seccion fade-in">
+            <div class="container">
+                <h2 class="text-center">Nuestros Servicios de Gestoría CNS</h2>
+                <p>Nos especializamos en facilitar todos los procesos relacionados con la Caja Nacional de Salud para que tu empresa esté siempre al día.</p>
+                <div class="beneficios-grid">
+                    <div class="beneficio-card">
+                        <i class="fas fa-building-user" aria-hidden="true"></i>
+                        <h3>Afiliación de Empresas</h3>
+                        <p>Gestionamos el registro completo de tu empresa ante la CNS, asegurando que todos los requisitos se cumplan correctamente desde el primer momento.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <h3>Inclusión de Trabajadores</h3>
+                        <p>Realizamos el trámite para afiliar a tus trabajadores y sus familias (cónyuges, hijos) de manera rápida y sin complicaciones.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <i class="fas fa-file-signature" aria-hidden="true"></i>
+                        <h3>Asesoría Continua</h3>
+                        <p>Te mantenemos informado sobre las últimas normativas y te asesoramos para resolver cualquier duda o inconveniente con la CNS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="beneficios" class="seccion fade-in">
             <div class="container">
                 <h2>¿Por Qué Elegirnos?</h2>
                 <p>Ofrecemos una experiencia única en Santa Cruz, enfocada en tu satisfacción y en resultados excepcionales que superan tus expectativas.</p>
                 <div class="beneficios-grid">
                     <div class="beneficio-card">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
                         <h3>Rapidez y Eficiencia</h3>
                         <p>Atendemos tu solicitud de inmediato y cumplimos en los plazos acordados. Tu tiempo es valioso y lo respetamos.</p>
                     </div>
                     <div class="beneficio-card">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-headset" aria-hidden="true"></i>
                         <h3>Atención Personalizada</h3>
                         <p>Hablamos directamente contigo para entender tus necesidades exactas. Cada cliente es único y merece un servicio especializado.</p>
                     </div>
                     <div class="beneficio-card">
-                        <i class="fas fa-hand-holding-dollar"></i>
+                        <i class="fas fa-hand-holding-dollar" aria-hidden="true"></i>
                         <h3>Precios Justos</h3>
                         <p>Te damos la mejor relación calidad-precio del mercado local. Transparencia total, sin costos ocultos.</p>
                     </div>
@@ -552,14 +550,32 @@
             </div>
         </section>
 
+        <section id="faq" class="seccion fade-in">
+            <div class="container">
+                <h2 class="text-center">Preguntas Frecuentes</h2>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>¿Qué documentos necesito para afiliar mi empresa?</summary>
+                        <p>Generalmente se requiere el NIT, matrícula de comercio (SEPREC), cédula de identidad del representante legal y la planilla de trabajadores. Nosotros te guiaremos paso a paso en la obtención y presentación de todo.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cuánto tiempo toma el proceso de afiliación?</summary>
+                        <p>Con nuestra gestión, aceleramos el proceso al máximo. Normalmente, puede completarse en unos pocos días hábiles una vez reunida toda la documentación correcta, evitando observaciones y retrasos.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Ofrecen servicios a empresas unipersonales?</summary>
+                        <p>Sí, brindamos asesoría y gestión de trámites tanto para empresas jurídicas (S.R.L., S.A.) como para empresas unipersonales y profesionales independientes que deseen afiliarse.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <section id="cta-final" class="seccion fade-in">
             <div class="container">
                 <h2>¿Listo para empezar?</h2>
-                <p>
-                    No esperes más para obtener la solución que buscas. Haz clic en el botón y hablemos directamente por WhatsApp. ¡La consulta es completamente gratis y sin compromiso!
-                </p>
-                <a href="https://wa.me/59133316465?text=Hola, estoy listo para empezar. Me gustaría conversar sobre sus servicios." target="_blank" class="cta-button whatsapp-button">
-                    <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i> Pedir Cotización Gratis
+                <p>No esperes más para obtener la solución que buscas. Haz clic en el botón y hablemos directamente por WhatsApp. ¡La consulta es completamente gratis y sin compromiso!</p>
+                <a href="https://wa.me/59133316465?text=Hola, estoy listo para empezar. Me gustaría una cotización para sus servicios de gestoría CNS." target="_blank" class="cta-button whatsapp-button" style="margin-top: 25px;">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Pedir Cotización Gratis
                 </a>
             </div>
         </section>
@@ -568,16 +584,17 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 TRAMITES CAJA NACIONAL SALUD CNS - Todos los derechos reservados.</p>
-            <p>Santa Cruz de la Sierra, Bolivia</p>
+            <p>Servicios de Gestoría en Santa Cruz de la Sierra, Bolivia</p>
+            <p><strong>Contacto WhatsApp:</strong> +591 333 16465</p>
         </div>
     </footer>
     
-    <a href="https://wa.me/59133316465?text=Hola, vengo desde su página web y necesito ayuda." target="_blank" class="whatsapp-flotante">
-        <i class="fab fa-whatsapp" style="font-family: 'Font Awesome 6 Brands';">💬</i>
+    <a href="https://wa.me/59133316465?text=Hola, vengo desde su página web y necesito ayuda con un trámite de la CNS." target="_blank" class="whatsapp-flotante" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <script>
-        // Efectos de scroll
+        // Efectos de scroll para animaciones de entrada
         function handleScrollAnimations() {
             const elements = document.querySelectorAll('.fade-in');
             
@@ -591,11 +608,7 @@
             });
         }
 
-        // Event listeners
-        window.addEventListener('scroll', handleScrollAnimations);
-        window.addEventListener('load', handleScrollAnimations);
-
-        // Smooth scroll para elementos internos
+        // Smooth scroll para anclas internas (si se añaden en el futuro)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -609,13 +622,25 @@
             });
         });
 
-        // Efecto parallax suave para el hero
+        // Event listeners para animaciones
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+
+        // Se ha deshabilitado el efecto parallax del Hero para evitar conflictos
+        // con el scroll en algunos dispositivos móviles y mejorar el rendimiento.
+        // Si deseas reactivarlo, descomenta las siguientes líneas:
+        /*
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.getElementById('hero');
-            const speed = scrolled * 0.5;
-            hero.style.transform = `translateY(${speed}px)`;
+            // Asegurarse que el hero existe antes de manipularlo
+            if(hero) {
+                const speed = scrolled * 0.4;
+                hero.style.transform = `translateY(${speed}px)`;
+                hero.style.willChange = 'transform';
+            }
         });
+        */
     </script>
 
 </body>
